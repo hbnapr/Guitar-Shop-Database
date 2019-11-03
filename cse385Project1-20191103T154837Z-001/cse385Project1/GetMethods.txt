@@ -1,0 +1,166 @@
+[WebMethod(Description = description + "Search Addresses by AddressID Number")]
+    public void GetAddressByAddressID(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetAddressByAddressID"));
+    }
+
+    [WebMethod(Description = description + "Search Addresses by CustomerID Number")]
+    public void GetAddressByCustomerID(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetAddressByCustomerID"));
+    }
+
+    [WebMethod(Description = description + "Search Addresses by Two-Letter State code, i.e. MI, OH, etc")]
+    public void GetAddressByState(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetAddressByState"));
+    }
+
+    [WebMethod(Description = description + "Search Administrators by Name")]
+    public void GetAdminByName(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetAdminByName"));
+    }
+
+    [WebMethod(Description = description + "Search Categories by Name")]
+    public void GetCategoryByName(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetCategoryByName"));
+    }
+
+    [WebMethod(Description = description + "Search Customers by Name")]
+    public void GetCustomerByName(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetCustomerByName"));
+    }
+
+    [WebMethod(Description = description + "Search Orders By CustomerID")]
+    public void GetOrderByCustomerID(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetOrderByCustomerID"));
+    }
+
+    [WebMethod(Description = description + "Search Orders By OrderDate, Use mm/dd/yyyy format")]
+    public void GetOrderByOrderDate(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetOrderByOrderDate"));
+    }
+
+    [WebMethod(Description = description + "Search Orders using a date range, Use mm/dd/yyyy format")]
+    public void GetOrderByOrderDateRange(string StartDate, string EndDate)
+    {
+        parameters.Add(new SqlParameter("@StartDate", StartDate));
+        parameters.Add(new SqlParameter("@EndDate", EndDate));
+        SerializeDataTable(spExec("spGetOrderByOrderDateRange"));
+    }
+
+    [WebMethod(Description = description + "Search Orders By ShipDate, Use mm/dd/yyyy format")]
+    public void GetOrderByShipDate(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetOrderByShipDate"));
+    }
+
+    [WebMethod(Description = description + "Search Orders by ShipDate using a date range, Use mm/dd/yyyy format")]
+    public void GetOrderByShipDateRange(string StartDate, string EndDate)
+    {
+        parameters.Add(new SqlParameter("@StartDate", StartDate));
+        parameters.Add(new SqlParameter("@EndDate", EndDate));
+        SerializeDataTable(spExec("spGetOrderByShipDateRange"));
+    }
+
+    [WebMethod(Description = description + "Search OrderItems By OrderID")]
+    public void GetOrderItemsByOrderID(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetOrderItemsByOrderID"));
+    }
+
+    [WebMethod(Description = description + "Search OrderItems By ProductID")]
+    public void GetOrderItemsByProductID(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetOrderItemsByProductID"));
+    }
+
+    [WebMethod(Description = description + "Search Products By CategoryID")]
+    public void GetProductByCategoryID(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetProductByCategoryID"));
+    }
+
+    [WebMethod(Description = description + "Search Products By DateAdded, Use mm/dd/yyyy format")]
+    public void GetProductByDateAdded(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetProductByDateAdded"));
+    }
+
+    [WebMethod(Description = description + "Search Products By DateAdded using a date range, Use mm/dd/yyyy format")]
+    public void GetProductByDateAddedRange(string StartDate, string EndDate)
+    {
+        parameters.Add(new SqlParameter("@StartDate", StartDate));
+        parameters.Add(new SqlParameter("@EndDate", EndDate));
+        SerializeDataTable(spExec("spGetProductByDateAddedRange"));
+    }
+
+    [WebMethod(Description = description + "Search Products By DiscountPercent")]
+    public void GetProductByDiscountPercent(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetProductByDiscountPercent"));
+    }
+
+    [WebMethod(Description = description + "Search Products By ProductCode")]
+    public void GetProductByProductCode(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetProductByProductCode"));
+    }
+
+    [WebMethod(Description = description + "Search Products By ProductID")]
+    public void GetProductByProductID(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetProductByProductID"));
+    }
+
+    [WebMethod(Description = description + "Search Products By ProductName")]
+    public void GetProductByProductName(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetProductByProductName"));
+    }
+
+    [WebMethod(Description = description + "Find the Total Order Cost for each Customer's order by CustomerName")]
+    public void GetTotalOrderCostByCustomer(string Search)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        SerializeDataTable(spExec("spGetTotalOrderCostByCustomer"));
+    }
+
+    [WebMethod(Description = description + "Find the Total Order Cost for each Customer's order by CustomerName and desired date range")]
+    public void GetTotalOrderCostByCustomerAndOrderDateRange(string Search, string StartDate, string EndDate)
+    {
+        parameters.Add(new SqlParameter("@SearchValue", Search));
+        parameters.Add(new SqlParameter("@StartDate", StartDate));
+        parameters.Add(new SqlParameter("@EndDate", EndDate));
+        SerializeDataTable(spExec("spGetTotalOrderCostByCustomerAndOrderDateRange"));
+    }
+
+    [WebMethod(Description = description + "Find the Total Cost of all orders in a given date range")]
+    public void GetTotalOrderCostByOrderDateRange(string StartDate, string EndDate)
+    {
+        parameters.Add(new SqlParameter("@StartDate", StartDate));
+        parameters.Add(new SqlParameter("@EndDate", EndDate));
+        SerializeDataTable(spExec("spGetTotalOrderCostByOrderDateRange"));
+    }
